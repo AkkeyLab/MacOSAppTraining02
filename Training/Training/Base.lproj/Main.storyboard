@@ -672,7 +672,38 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NX5-Pe-dB5">
+                                <rect key="frame" x="206" y="118" width="70" height="32"/>
+                                <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pVf-1F-IsZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="savePush:" target="XfG-lQ-9wD" id="rTs-jy-AID"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPs-19-qIU">
+                                <rect key="frame" x="20" y="166" width="440" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="IzO-ZV-a0T"/>
+                                    <constraint firstAttribute="width" constant="440" id="TPV-C1-hxQ"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Qt5-iB-mSf"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="UPs-19-qIU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="0u3-Ln-KjL"/>
+                            <constraint firstAttribute="trailing" secondItem="UPs-19-qIU" secondAttribute="trailing" constant="20" id="EMK-d5-FLA"/>
+                            <constraint firstItem="NX5-Pe-dB5" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="EPV-J7-5j1"/>
+                            <constraint firstItem="UPs-19-qIU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="a1T-07-BA0"/>
+                            <constraint firstItem="NX5-Pe-dB5" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="ajK-uK-qAq"/>
+                            <constraint firstItem="NX5-Pe-dB5" firstAttribute="top" secondItem="UPs-19-qIU" secondAttribute="bottom" constant="20" id="cXs-zd-zO4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outPutImage" destination="UPs-19-qIU" id="C8A-cV-X27"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
