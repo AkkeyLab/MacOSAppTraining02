@@ -10,6 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var outPutImage: NSImageView!
+    private let alert = NSAlert()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,18 @@ class ViewController: NSViewController {
                 self.readItem((panel.directoryURL?.path)! + "/sample.png")
             }
         })
-
     }
 
     func readItem(url: String) {
-        let image: NSImage = NSImage(contentsOfFile: url)!
-        outPutImage.image = image
+
+        if (NSImage(contentsOfFile: url) != nil) {
+            let image: NSImage = NSImage(contentsOfFile: url)!
+            outPutImage.image = image
+        } else {
+            alert.messageText = "Error"
+            alert.informativeText = "Not find sample.png"
+            alert.runModal()
+        }
     }
 
     override var representedObject: AnyObject? {
