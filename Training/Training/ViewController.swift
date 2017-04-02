@@ -10,7 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var outPutImage: NSImageView!
-    private let alert = NSAlert()
+    fileprivate let alert = NSAlert()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +18,12 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func savePush(sender: AnyObject) {
+    @IBAction func savePush(_ sender: AnyObject) {
         let panel = NSOpenPanel()
         panel.canChooseFiles = false
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
-        panel.beginWithCompletionHandler({ (num) -> Void in
+        panel.begin(completionHandler: { (num) -> Void in
             if num == NSModalResponseOK {
                 NSLog("\(panel.directoryURL?.path)")
 
@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         })
     }
 
-    func readItem(url: String) {
+    func readItem(_ url: String) {
 
         if (NSImage(contentsOfFile: url) != nil) {
             let image: NSImage = NSImage(contentsOfFile: url)!
@@ -44,7 +44,7 @@ class ViewController: NSViewController {
         }
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
         }
